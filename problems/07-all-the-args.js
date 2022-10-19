@@ -1,5 +1,9 @@
 function allTheArgs(func, ...args) {
-  // Your code here
+  let results = args;
+  return function (...nestedArgs) {
+    results = results.concat(nestedArgs);
+    return func(...results);
+  }
 }
 
 /*****************************************************************************/
